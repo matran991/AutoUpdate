@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Update Popup Matran999</title>
+	<link rel="stylesheet" type="text/css" href="style.css?323">
+	<style>
+	body {background: #4b525d;margin: 0;}
+	html,body {overflow:hidden;height:660px}
+	.bg{min-width:500px;margin:0 auto;padding:10px;background:#4b525d;color:#fff;position:relative;}
+	.titlebar{position:absolute;top:4px;right:6px}
+	.close-btn{background:red;font-size:25px;padding:5px 10px;cursor:pointer}
+	.title-popup{font-size:46px;font-weight:700;border-bottom:3px dashed;padding-bottom:10px}
+	img.newImg{width:120px;vertical-align:middle;display:inline-block}
+	.title-popup span{display:inline-block;vertical-align:middle}
+	.content-result{padding:10px;font-size:30px;min-height:400px;max-height:400px;overflow:auto;margin-bottom:20px}
+	.button-result{padding:10px 0;text-align:center;border-top:4px dashed;position: absolute;width: 100%;bottom: -108px;margin: 0;}
+	#submit-patch{background:#dc143c}
+	.btn-click{border:0;color:#fff;padding:10px;font-size:20px;font-weight:700;cursor:pointer;margin:0 10px;min-width:150px;display: inline-block;list-style-type: none;}
+	.btn-click:hover{background:#000!important}
+	#pass-patch{background:green}
+	#remove-update{background:gray}
+	*{transition:all .3s}
+	.close-btn:hover{background:#000}
+	li[id="-3"] {background: dodgerblue;}
+	ul.list-link{list-style-type:none;margin:0;padding:0;margin-top:10px}
+	.btn-text.item-link{display:inline-block;margin-right:40px;cursor:pointer}
+	.btn-text.item-link:hover{color:#5f9ea0}
+	.list-link{list-style-type:none;padding:0;margin:10px}
+	.list-link li{display:inline-block;font-size:20px;margin:0 20px;cursor:pointer}
+	.list-link li img{width:30px;vertical-align:middle}
+	.title-list{display:block!important}
+	.list-link li span{vertical-align:middle}
+	.list-link li:hover{color:#d2691e}
+	</style>
+	
+</head>
+<body>
+	<div class="bg">
+		<div class="titlebar">
+			<div id="-3" title="Thoát Patch" class="close-btn">X</div>
+		</div>
+		<div id="content-pop">
+			<div class="title-popup"><span>Thông Báo!</span><img class="newImg" src="new.gif"/>
+			</div>
+			<div id="contentHtml" class="content-result">
+			</div>
+			<ul class="button-result">
+				<li title="Nhấn để chạy lại patch để cập nhật." id="submit-patch" class="btn-click" onclick="RunPatch()">Chạy Patch Cập Nhật</li>
+				<li title="Nhấn để cập nhật sau, giờ không rảnh." id="-3" class="btn-click">Để Sau</li>
+				<li title="Nhấn để gỡ tự động update." id="remove-update" class="btn-click" onclick="RemovePatch()">Gỡ Bỏ</li>
+				<ul class="list-link">
+					<li class="title-list">©2019 Design By Matran999</li>
+					<li title="Nhấn để truy cập discord Gametiengviet" id="discord" onclick="Goto(1)" class="btn-text item-link"><img src="discord.png" /> <span>Discord</span></li>
+					<li title="Nhấn để truy cập diễn đàn Gametiengviet" id="forum" onclick="Goto(2)" class="btn-text item-link"><img src="forum.png" /> <span>Forum</span></li>
+					<li title="Nhấn để truy cập facebook Gametiengviet" id="facebook" onclick="Goto(3)" class="btn-text item-link"><img src="face.png" /> <span>Facebook</span></li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//alert("123");
+		function SetMsg($data){
+			document.getElementById("contentHtml").innerHTML = $data;
+		}
+		function RunPatch(){
+			execscript('RunPatch()')
+		}		
+		function RemovePatch(){
+			execscript('RemoveAuto()')
+		}
+		function Goto($value){
+			switch($value) {
+				case 1:
+					execscript('Goto("https://discord.gg/3SkGPy4")')
+					break;
+				case 2:
+					execscript('Goto("https://gametiengviet.com/forums/")')
+					break;
+				case 3:
+					execscript('Goto("https://www.facebook.com/gametiengviet/")')
+					break;
+			}
+		}
+		//document.getElementById("contentHtml").innerHTML = "asfsf";
+		//execscript('SetInfo()');
+	</script>
+</body>
+</html>
